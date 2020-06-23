@@ -10,6 +10,7 @@
 #import "UIColor+RSColors.h"
 @implementation GalleryViewController
 -(void)viewDidLoad {
-
+  [UINavigationBar appearance].barTintColor = [UIColor rsschoolYellowColor];
+  
 }
 @end

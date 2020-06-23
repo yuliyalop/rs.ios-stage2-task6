@@ -29,6 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     //self.toolbarHidden = YES;
     //self.navigationBarHidden = YES;
     [self figures];

@@ -10,7 +10,7 @@
 #import "ObjectItem.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface InfoViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface InfoViewController : UINavigationController <UITableViewDelegate, UITableViewDataSource>
 
 @end
 

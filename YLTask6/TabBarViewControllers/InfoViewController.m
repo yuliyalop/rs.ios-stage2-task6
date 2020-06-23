@@ -9,6 +9,7 @@
 #import "InfoViewController.h"
 #import "InfoTableViewCell.h"
 #import "ObjectItem.h"
+#import "UIColor+RSColors.h"
 @interface InfoViewController ()
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray<ObjectItem *> *dataSource;
@@ -18,6 +19,9 @@
 
 
 - (void)viewDidLoad {
+   
+      [UINavigationBar appearance].barTintColor = [UIColor rsschoolYellowColor];
+      
     [self setUpTableView];
     [self fillInitialDataSource];
 }

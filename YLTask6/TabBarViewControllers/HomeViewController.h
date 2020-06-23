@@ -10,7 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UINavigationController
+@property (strong, nonatomic) UIButton *gitButton;
+@property (strong, nonatomic) UIButton *resetButton;
+@property (strong, nonatomic) UILabel *apple;
+@property (strong, nonatomic) UIStackView *stackView;
+@property (strong, nonatomic) UIView *triangleView;
+@property (strong, nonatomic) UIView *squareView;
+@property (strong, nonatomic) UIView *circleView;
 
 @end
 
