@@ -12,7 +12,7 @@
 #import "InfoViewController.h"
 #import "GalleryViewController.h"
 #import "HomeViewController.h"
-#import "CustomNavigationBar.h"
+
 @interface NavigationVC ()
 @property (strong, nonatomic) UIButton *startButton;
 @property (strong, nonatomic) UILabel *label;
@@ -143,21 +143,22 @@
 
 -(void) buttonPressed {
 
-    InfoViewController *tab1 = [InfoViewController new];
-     tab1.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"info_unselected"] selectedImage:[UIImage imageNamed:@"info_selected"]];
+    UIViewController *tab1 = [InfoViewController new];
+    tab1.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"info_unselected"] selectedImage:[[UIImage imageNamed:@"info_selected"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
     
-    GalleryViewController *tab2 = [[GalleryViewController alloc]initWithNavigationBarClass:[CustomNavigationBar class] toolbarClass:nil];
-    tab2.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"gallery_unselected"] selectedImage:[UIImage imageNamed:@"gallery_selected"]];
+    GalleryViewController *tab2 = [GalleryViewController new];
+    
+    tab2.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"gallery_unselected"] selectedImage:[[UIImage imageNamed:@"gallery_selected"]imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
 
        HomeViewController *tab3 = [HomeViewController new];
-       tab3.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"home_selected"] selectedImage:[UIImage imageNamed:@"home_selected"]];
+       tab3.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"home_selected"] selectedImage:[[UIImage imageNamed:@"home_selected"]imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
 
        TabViewController *tabBarController = [TabViewController new];
       tabBarController.viewControllers = @[tab1, tab2, tab3];
     
      tabBarController.selectedIndex = 1;
     
-   [self.navigationController pushViewController:tabBarController animated:NO];
+   [self.navigationController pushViewController:tabBarController animated:YES];
    
     
 }

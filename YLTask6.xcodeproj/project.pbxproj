@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9BB6453424A15C05002FA5EC /* CustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6453324A15C05002FA5EC /* CustomNavigationBar.m */; };
 		9BB94ED3249FE183001A55E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB94ED2249FE183001A55E8 /* AppDelegate.m */; };
 		9BB94ED6249FE183001A55E8 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB94ED5249FE183001A55E8 /* SceneDelegate.m */; };
 		9BB94EDE249FE187001A55E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BB94EDD249FE187001A55E8 /* Assets.xcassets */; };
@@ -24,8 +23,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9BB6453224A15C05002FA5EC /* CustomNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomNavigationBar.h; sourceTree = "<group>"; };
-		9BB6453324A15C05002FA5EC /* CustomNavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationBar.m; sourceTree = "<group>"; };
 		9BB94ECE249FE183001A55E8 /* YLTask6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YLTask6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB94ED1249FE183001A55E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9BB94ED2249FE183001A55E8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -104,8 +101,6 @@
 				9BB94EFA24A09837001A55E8 /* HomeViewController.m */,
 				9BB94EF624A09815001A55E8 /* GalleryViewController.h */,
 				9BB94EF724A09815001A55E8 /* GalleryViewController.m */,
-				9BB6453224A15C05002FA5EC /* CustomNavigationBar.h */,
-				9BB6453324A15C05002FA5EC /* CustomNavigationBar.m */,
 				9BB94EF324A097AC001A55E8 /* InfoViewController.h */,
 				9BB94EF424A097AC001A55E8 /* InfoViewController.m */,
 				9BB94EE3249FE187001A55E8 /* main.m */,
@@ -186,7 +181,6 @@
 				9BB94F0124A143D0001A55E8 /* InfoTableViewCell.m in Sources */,
 				9BB94EFE24A14168001A55E8 /* ObjectItem.m in Sources */,
 				9BB94EF824A09815001A55E8 /* GalleryViewController.m in Sources */,
-				9BB6453424A15C05002FA5EC /* CustomNavigationBar.m in Sources */,
 				9BB94ED3249FE183001A55E8 /* AppDelegate.m in Sources */,
 				9BB94EE4249FE187001A55E8 /* main.m in Sources */,
 				9BB94EEC249FED69001A55E8 /* NavigationVC.m in Sources */,

@@ -10,7 +10,6 @@
 #import "UIColor+RSColors.h"
 @implementation GalleryViewController
 -(void)viewDidLoad {
-    self.navigationItem.title = @"Images";
- 
+
 }
 @end

@@ -10,8 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GalleryViewController : UINavigationController
-@property (nonatomic, strong) UINavigationBar *yellowBar;
+@interface GalleryViewController : UIViewController
+
 @end
 
 NS_ASSUME_NONNULL_END
