@@ -22,6 +22,7 @@
 @property (strong, nonatomic) UIView *triangleView;
 @property (strong, nonatomic) UIView *squareView;
 @property (strong, nonatomic) UIView *circleView;
+@property (strong, nonatomic) UIScrollView *scrollView;
 
 @end
 
@@ -35,15 +36,45 @@
     [self figures];
     [self makeLabel];
     [self buttonSettings];
-    
+    [self setUpStack];
     
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [self setUpStack];
+- (void)viewDidAppear:(BOOL)animated {
+    #pragma mark Animations
+      [UIView animateWithDuration:1
+                         delay:0
+                         options: UIViewAnimationOptionRepeat
+                       animations:^{ [self.triangleView setTransform:CGAffineTransformMakeRotation(360)];
+                                    }
+                       completion:^(BOOL finished) {
+                                                    }];
+      
+         
+    [UIView animateWithDuration:1
+                            delay:0
+                            options:  UIViewAnimationOptionAutoreverse |UIViewAnimationOptionRepeat
+                     animations:^{
+        self.squareView.center = CGPointMake(self.squareView.center.x, self.squareView.center.y + self.squareView.frame.size.width * 0.1);
+        self.squareView.center = CGPointMake(self.squareView.center.x, self.squareView.center.y - self.squareView.frame.size.width * 0.1);
+    }
+                          completion:^(BOOL finished) {
+                                                       }];
+         
+    
+  CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale.x"];
+  animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+  animation.fromValue = [NSNumber numberWithFloat:0.9];
+  animation.toValue = [NSNumber numberWithFloat:1];
+  animation.duration = 1.0;
+   animation.repeatCount=HUGE_VALF;
+  [self.circleView.layer addAnimation:animation forKey:@"scale"];
+  //[animation.layer setCornerRadius:0.0];
+  
 }
+   
 -(void) makeLabel {
-    self.label = [[UILabel alloc]init];//WithFrame:CGRectMake(120.0, 120.0, 300.0, 70.0)];
+    self.label = [[UILabel alloc]init];
     self.label.text = @"Are you ready?";
     self.label.font = [UIFont systemFontOfSize:24 weight:UIFontWeightMedium];
     [self.view addSubview:self.label];
@@ -56,15 +87,12 @@
 }
 -(void) figures {
     #pragma mark Circle
-    //self.circleView = [[UIView alloc] init];//WithFrame:CGRectMake(70,300,70,70)];
-    self.circleView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.circleView = [[UIView alloc] init];
        self.circleView.layer.cornerRadius = 35;
        self.circleView.backgroundColor = [UIColor rsschoolRedColor];
-      // [self.view addSubview:self.circleView];
     #pragma mark Square
-    self.squareView = [[UIView alloc]init];//WithFrame:CGRectMake(170.0, 300.0, 70, 70)];
+    self.squareView = [[UIView alloc]init];
        self.squareView.backgroundColor = [UIColor rsschoolBlueColor];
-     //  [self.view addSubview:self.squareView];
     #pragma mark Triangle
        UIBezierPath* trianglePath = [UIBezierPath bezierPath];
        [trianglePath moveToPoint:CGPointMake(35, 0)];
@@ -73,12 +101,11 @@
        [trianglePath closePath];
        CAShapeLayer *triangleMaskLayer = [CAShapeLayer layer];
        [triangleMaskLayer setPath:trianglePath.CGPath];
-       self.triangleView = [[UIView alloc] init];//WithFrame:CGRectMake(270.0,300.0, 70.0, 70.0)];
+       self.triangleView = [[UIView alloc] init];
        self.triangleView.backgroundColor = [UIColor rsschoolGreenColor];
        self.triangleView.layer.mask = triangleMaskLayer;
-      // [self.view addSubview:self.triangleView];
-    
 }
+     
 -(void) setUpStack {
     self.containerStackView = [[UIStackView alloc]init];
 
