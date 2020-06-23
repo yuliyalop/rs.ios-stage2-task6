@@ -19,7 +19,7 @@
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
     self.window = [[UIWindow alloc]initWithWindowScene:(UIWindowScene *)scene];
     NavigationVC *VC = [[NavigationVC alloc]init];
-    //[UINavigationBar appearance].barTintColor = [UIColor rsschoolYellowColor];
+    [UINavigationBar appearance].barTintColor = [UIColor rsschoolYellowColor];
     self.window.backgroundColor = [UIColor rsschoolWhiteColor];
     UINavigationController *NC = [[UINavigationController alloc] initWithRootViewController:VC];
     self.window.rootViewController = NC;

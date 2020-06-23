@@ -43,14 +43,14 @@
     [self setUpStack];
 }
 -(void) makeLabel {
-    self.label = [[UILabel alloc]initWithFrame:CGRectMake(120.0, 120.0, 300.0, 70.0)];
+    self.label = [[UILabel alloc]init];//WithFrame:CGRectMake(120.0, 120.0, 300.0, 70.0)];
     self.label.text = @"Are you ready?";
     self.label.font = [UIFont systemFontOfSize:24 weight:UIFontWeightMedium];
     [self.view addSubview:self.label];
     self.label.translatesAutoresizingMaskIntoConstraints = NO;
        [NSLayoutConstraint activateConstraints:@[
-           [self.label.topAnchor constraintEqualToAnchor:self.view.topAnchor],
-           [self.label.bottomAnchor constraintEqualToAnchor:self.view.centerYAnchor constant:-70],
+           //[self.label.topAnchor constraintEqualToAnchor:self.view.topAnchor],
+           [self.label.bottomAnchor constraintEqualToAnchor:self.view.centerYAnchor constant:-200],
            [self.label.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor]
        ]];
 }
@@ -110,10 +110,11 @@
   
    self.containerStackView.translatesAutoresizingMaskIntoConstraints = NO;
     [NSLayoutConstraint activateConstraints:@[
-        [self.containerStackView.topAnchor constraintEqualToAnchor:self.label.bottomAnchor constant:5],
+        [self.containerStackView.topAnchor constraintEqualToAnchor:self.view.centerYAnchor constant:-70],
         [self.containerStackView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
-        [self.containerStackView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:50],
-        [self.containerStackView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-50],
+        [self.containerStackView.widthAnchor constraintEqualToConstant:300]
+        /*[self.containerStackView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:50],
+        [self.containerStackView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-50],*/
        
     ]];
     
@@ -133,11 +134,12 @@
     
    self.startButton.translatesAutoresizingMaskIntoConstraints = NO;
          [NSLayoutConstraint activateConstraints:@[
-             [self.startButton.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:50],
-             [self.startButton.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-50],
-             [self.startButton.topAnchor constraintEqualToAnchor:self.view.centerYAnchor constant:150],
-             [self.startButton.bottomAnchor constraintEqualToAnchor:self.startButton.topAnchor constant:55],
+             [self.startButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
+             [self.startButton.topAnchor constraintEqualToAnchor:self.view.centerYAnchor constant:140],
+             [self.startButton.heightAnchor constraintEqualToConstant:55],
+             [self.startButton.widthAnchor constraintEqualToConstant:300],
          ]];
+    
 
 
 }

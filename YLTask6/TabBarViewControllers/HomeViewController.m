@@ -12,8 +12,7 @@
 #import "SceneDelegate.h"
 @implementation HomeViewController
 -(void)viewDidLoad {
-  [UINavigationBar appearance].barTintColor = [UIColor rsschoolYellowColor];
-    
+    self.navigationItem.title = @"ghghhg";
     //[self setUpStack];
     [self gitButtonSettings];
    [self resetButtonSettings];
