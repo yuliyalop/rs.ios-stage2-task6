@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9BB645A224A3D16D002FA5EC /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB645A124A3D16C002FA5EC /* CollectionViewCell.m */; };
+		9BB645A524A3E3A9002FA5EC /* Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB645A424A3E3A9002FA5EC /* Data.m */; };
 		9BB94ED3249FE183001A55E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB94ED2249FE183001A55E8 /* AppDelegate.m */; };
 		9BB94ED6249FE183001A55E8 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB94ED5249FE183001A55E8 /* SceneDelegate.m */; };
 		9BB94EDE249FE187001A55E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BB94EDD249FE187001A55E8 /* Assets.xcassets */; };
@@ -18,11 +20,14 @@
 		9BB94EF524A097AC001A55E8 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB94EF424A097AC001A55E8 /* InfoViewController.m */; };
 		9BB94EF824A09815001A55E8 /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB94EF724A09815001A55E8 /* GalleryViewController.m */; };
 		9BB94EFB24A09837001A55E8 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB94EFA24A09837001A55E8 /* HomeViewController.m */; };
-		9BB94EFE24A14168001A55E8 /* ObjectItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB94EFD24A14168001A55E8 /* ObjectItem.m */; };
 		9BB94F0124A143D0001A55E8 /* InfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB94F0024A143D0001A55E8 /* InfoTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9BB645A024A3D16C002FA5EC /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		9BB645A124A3D16C002FA5EC /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		9BB645A324A3E3A9002FA5EC /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
+		9BB645A424A3E3A9002FA5EC /* Data.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Data.m; sourceTree = "<group>"; };
 		9BB94ECE249FE183001A55E8 /* YLTask6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YLTask6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB94ED1249FE183001A55E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9BB94ED2249FE183001A55E8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -44,8 +49,6 @@
 		9BB94EF724A09815001A55E8 /* GalleryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GalleryViewController.m; path = TabBarViewControllers/GalleryViewController.m; sourceTree = "<group>"; };
 		9BB94EF924A09837001A55E8 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = TabBarViewControllers/HomeViewController.h; sourceTree = "<group>"; };
 		9BB94EFA24A09837001A55E8 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = TabBarViewControllers/HomeViewController.m; sourceTree = "<group>"; };
-		9BB94EFC24A14168001A55E8 /* ObjectItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectItem.h; sourceTree = "<group>"; };
-		9BB94EFD24A14168001A55E8 /* ObjectItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjectItem.m; sourceTree = "<group>"; };
 		9BB94EFF24A143D0001A55E8 /* InfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoTableViewCell.h; sourceTree = "<group>"; };
 		9BB94F0024A143D0001A55E8 /* InfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,16 +96,18 @@
 				9BB94EEB249FED69001A55E8 /* NavigationVC.m */,
 				9BB94EF024A096B6001A55E8 /* TabViewController.h */,
 				9BB94EF124A096B6001A55E8 /* TabViewController.m */,
-				9BB94EFC24A14168001A55E8 /* ObjectItem.h */,
-				9BB94EFD24A14168001A55E8 /* ObjectItem.m */,
-				9BB94EFF24A143D0001A55E8 /* InfoTableViewCell.h */,
-				9BB94F0024A143D0001A55E8 /* InfoTableViewCell.m */,
 				9BB94EF924A09837001A55E8 /* HomeViewController.h */,
 				9BB94EFA24A09837001A55E8 /* HomeViewController.m */,
 				9BB94EF624A09815001A55E8 /* GalleryViewController.h */,
 				9BB94EF724A09815001A55E8 /* GalleryViewController.m */,
+				9BB645A024A3D16C002FA5EC /* CollectionViewCell.h */,
+				9BB645A124A3D16C002FA5EC /* CollectionViewCell.m */,
 				9BB94EF324A097AC001A55E8 /* InfoViewController.h */,
 				9BB94EF424A097AC001A55E8 /* InfoViewController.m */,
+				9BB645A324A3E3A9002FA5EC /* Data.h */,
+				9BB645A424A3E3A9002FA5EC /* Data.m */,
+				9BB94EFF24A143D0001A55E8 /* InfoTableViewCell.h */,
+				9BB94F0024A143D0001A55E8 /* InfoTableViewCell.m */,
 				9BB94EE3249FE187001A55E8 /* main.m */,
 			);
 			path = YLTask6;
@@ -177,12 +182,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BB645A524A3E3A9002FA5EC /* Data.m in Sources */,
 				9BB94EF224A096B6001A55E8 /* TabViewController.m in Sources */,
 				9BB94F0124A143D0001A55E8 /* InfoTableViewCell.m in Sources */,
-				9BB94EFE24A14168001A55E8 /* ObjectItem.m in Sources */,
 				9BB94EF824A09815001A55E8 /* GalleryViewController.m in Sources */,
 				9BB94ED3249FE183001A55E8 /* AppDelegate.m in Sources */,
 				9BB94EE4249FE187001A55E8 /* main.m in Sources */,
+				9BB645A224A3D16D002FA5EC /* CollectionViewCell.m in Sources */,
 				9BB94EEC249FED69001A55E8 /* NavigationVC.m in Sources */,
 				9BB94EFB24A09837001A55E8 /* HomeViewController.m in Sources */,
 				9BB94ED6249FE183001A55E8 /* SceneDelegate.m in Sources */,

@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ObjectItem.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface InfoTableViewCell : UITableViewCell
 
-- (void)configureWithObjectItem:(ObjectItem *)objectItem;
 
 
 @end

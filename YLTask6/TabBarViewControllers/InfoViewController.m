@@ -8,11 +8,11 @@
 
 #import "InfoViewController.h"
 #import "InfoTableViewCell.h"
-#import "ObjectItem.h"
+#import "Data.h"
 #import "UIColor+RSColors.h"
 @interface InfoViewController ()
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray<ObjectItem *> *dataSource;
+@property (nonatomic, strong) NSMutableArray *arrayData;
 @end
 
 @implementation InfoViewController
@@ -21,7 +21,6 @@
 - (void)viewDidLoad {
    
       [UINavigationBar appearance].barTintColor = [UIColor rsschoolYellowColor];
-      
     [self setUpTableView];
     [self fillInitialDataSource];
 }
@@ -43,12 +42,12 @@
     #pragma mark - UITableViewDataSource
 
     - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-        return self.dataSource.count;
+        return self.arrayData.count;
     }
 
     - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
         InfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellId" forIndexPath:indexPath];
-        [cell configureWithObjectItem:self.dataSource[indexPath.row]];
+        //[cell метод ячейки:self.arrayData[indexPath.row]];
         return cell;
     }
 
@@ -63,11 +62,12 @@
 
 
     - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-        return 200.0;
+        return 20.0;
     }
 
 
 - (void)fillInitialDataSource {
-   
+
+    ///здесь мы заполняем ячейки
 }
 @end

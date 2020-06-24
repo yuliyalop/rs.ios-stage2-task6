@@ -10,7 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GalleryViewController : UINavigationController
+@interface GalleryViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+@property (strong, nonatomic) UICollectionView *collectionView;
 
 @end
 

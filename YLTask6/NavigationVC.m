@@ -31,12 +31,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //self.toolbarHidden = YES;
-    //self.navigationBarHidden = YES;
+    [self.navigationController setNavigationBarHidden:NO];
     [self figures];
     [self makeLabel];
     [self buttonSettings];
     [self setUpStack];
+  
+   
     
 }
 
@@ -73,6 +74,7 @@
   
 }
    
+
 -(void) makeLabel {
     self.label = [[UILabel alloc]init];
     self.label.text = @"Are you ready?";
@@ -182,6 +184,7 @@
 
        HomeViewController *tab3 = [HomeViewController new];
        tab3.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"home_selected"] selectedImage:[[UIImage imageNamed:@"home_selected"]imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+    
 
        TabViewController *tabBarController = [TabViewController new];
       tabBarController.viewControllers = @[tab1, tab2, tab3];

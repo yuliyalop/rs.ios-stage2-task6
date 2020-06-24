@@ -12,22 +12,21 @@
 #import "SceneDelegate.h"
 @implementation HomeViewController
 -(void)viewDidLoad {
-    self.navigationItem.title = @"ghghhg";
-    //[self setUpStack];
+    [self figures];
+    [self setUpStack];
     [self gitButtonSettings];
    [self resetButtonSettings];
 }
 
 -(void) figures {
     #pragma mark Circle
-   
+    self.circleView = [UIView new];
        self.circleView.layer.cornerRadius = 35;
        self.circleView.backgroundColor = [UIColor rsschoolRedColor];
       // [self.view addSubview:self.circleView];
     #pragma mark Square
     self.squareView = [[UIView alloc]init];
        self.squareView.backgroundColor = [UIColor rsschoolBlueColor];
-     //  [self.view addSubview:self.squareView];
     #pragma mark Triangle
        UIBezierPath* trianglePath = [UIBezierPath bezierPath];
        [trianglePath moveToPoint:CGPointMake(35, 0)];
@@ -39,8 +38,6 @@
        self.triangleView = [[UIView alloc] init];
        self.triangleView.backgroundColor = [UIColor rsschoolGreenColor];
        self.triangleView.layer.mask = triangleMaskLayer;
-      // [self.view addSubview:self.triangleView];
-    
 }
 
 
@@ -66,7 +63,6 @@
 }
 -(void) resetButtonSettings {
     self.resetButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    
     self.resetButton.backgroundColor = [UIColor rsschoolRedColor];
     [self.resetButton setTitle:@"Go to start!" forState:UIControlStateNormal];
     [self.resetButton setTitleColor:[UIColor rsschoolBlackColor] forState:UIControlStateNormal];
@@ -75,7 +71,6 @@
     self.resetButton.layer.cornerRadius = 55.0/2.0f;
     [self.resetButton addTarget:self action:@selector(resetButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.resetButton];
-    
    self.resetButton.translatesAutoresizingMaskIntoConstraints = NO;
      [NSLayoutConstraint activateConstraints:@[
              [self.resetButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
@@ -83,8 +78,6 @@
              [self.resetButton.widthAnchor constraintEqualToConstant:300],
              [self.resetButton.heightAnchor constraintEqualToConstant:55]
          ]];
-
-
 }
 
 -(void) gitButtonPressed {
@@ -93,6 +86,42 @@
 
 -(void) resetButtonPressed {
     [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+-(void) setUpStack {
+    self.stackView = [[UIStackView alloc]init];
+    [self.stackView addArrangedSubview:self.circleView];
+    [self.stackView addArrangedSubview:self.squareView];
+    [self.stackView addArrangedSubview:self.triangleView];
+    self.triangleView.translatesAutoresizingMaskIntoConstraints = NO;
+        [NSLayoutConstraint activateConstraints:@[
+            [self.triangleView.heightAnchor constraintEqualToConstant:70],
+            [self.triangleView.widthAnchor constraintEqualToConstant:70]
+        ]];
+    self.circleView.translatesAutoresizingMaskIntoConstraints = NO;
+           [NSLayoutConstraint activateConstraints:@[
+               [self.circleView.heightAnchor constraintEqualToConstant:70],
+            [self.circleView.widthAnchor constraintEqualToConstant:70]
+           ]];
+    self.triangleView.translatesAutoresizingMaskIntoConstraints = NO;
+           [NSLayoutConstraint activateConstraints:@[
+             [self.squareView.heightAnchor constraintEqualToConstant:70],
+            [self.squareView.widthAnchor constraintEqualToConstant:70]
+           ]];
+    self.stackView.axis = UILayoutConstraintAxisHorizontal;
+    self.stackView.distribution = UIStackViewDistributionEqualCentering;
+    self.stackView.alignment = UIStackViewAlignmentCenter;
+    [self.view addSubview:self.stackView];
+   self.stackView.translatesAutoresizingMaskIntoConstraints = NO;
+    [NSLayoutConstraint activateConstraints:@[
+        [self.stackView.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor],
+        [self.stackView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
+        [self.stackView.widthAnchor constraintEqualToConstant:300]
+        /*[self.containerStackView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:50],
+        [self.containerStackView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-50],
+       */
+    ]];
+    
 }
 
 
