@@ -20,6 +20,17 @@
 
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    [self.navigationItem setHidesBackButton:YES animated:YES];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    [self.navigationController setNavigationBarHidden:NO animated:YES]; 
+}
 /*
 #pragma mark - Navigation
 

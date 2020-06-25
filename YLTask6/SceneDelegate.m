@@ -17,17 +17,18 @@
 
 
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
-    self.window = [[UIWindow alloc]initWithWindowScene:(UIWindowScene *)scene];
-    NavigationVC *VC = [[NavigationVC alloc]init];
-    //[UINavigationBar appearance].barTintColor = [UIColor rsschoolYellowColor];
-    self.window.backgroundColor = [UIColor rsschoolWhiteColor];
-    UINavigationController *NC = [[UINavigationController alloc] initWithRootViewController:VC];
-    NC.navigationBar.barTintColor = [UIColor rsschoolYellowColor];
-    self.window.rootViewController = NC;
-    //self.window = window;
+    UIWindow *window = [[UIWindow alloc]initWithWindowScene:(UIWindowScene *)scene];
+    window.rootViewController = [self rootViewController];
+    self.window = window;
     [self.window makeKeyAndVisible];
 }
 
+- (UIViewController *) rootViewController {
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[NavigationVC new]];
+    [navigationController setNavigationBarHidden:YES animated:NO];
+    [UINavigationBar appearance].barTintColor = [UIColor rsschoolYellowColor];
+    return navigationController;
+}
 
 - (void)sceneDidDisconnect:(UIScene *)scene {
     // Called as the scene is being released by the system.

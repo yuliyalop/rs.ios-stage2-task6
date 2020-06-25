@@ -30,7 +30,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:NO];
+    self.view.backgroundColor = [UIColor rsschoolWhiteColor];
+    [self.navigationController setNavigationBarHidden:YES];
     [self figures];
     [self makeLabel];
     [self buttonSettings];

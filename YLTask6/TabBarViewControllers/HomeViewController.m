@@ -16,6 +16,8 @@
     [self setUpStack];
     [self gitButtonSettings];
    [self resetButtonSettings];
+    self.parentViewController.navigationItem.title = @"RSSchool Task 6";
+    
 }
 
 -(void) figures {

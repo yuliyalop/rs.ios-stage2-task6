@@ -12,8 +12,7 @@
 @implementation GalleryViewController
 -(void)viewDidLoad {
     [super viewDidLoad];
-    
-   // self.parentViewController.navigationItem.title = @"Images";
+    self.parentViewController.navigationItem.title = @"Gallery";
 }
 
 -(void)setUpCollection {

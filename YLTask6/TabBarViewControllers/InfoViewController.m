@@ -20,8 +20,9 @@
 
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
+    self.parentViewController.navigationItem.title = @"Info";
     
-      [UINavigationBar appearance].barTintColor = [UIColor rsschoolYellowColor];
     [self setUpTableView];
     [self fillInitialDataSource];
 }
