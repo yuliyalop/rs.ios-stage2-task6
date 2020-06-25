@@ -12,32 +12,41 @@
 @implementation GalleryViewController
 -(void)viewDidLoad {
     [super viewDidLoad];
-    self.parentViewController.navigationItem.title = @"Gallery";
+    [self setUpCollection];
 }
 
 -(void)setUpCollection {
-    self.collectionView = [[UICollectionView alloc] init];
-    self.collectionView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.collectionView.delegate = self;
+    
+    UICollectionViewFlowLayout *collectionViewLayout = [[UICollectionViewFlowLayout alloc] init];
+    collectionViewLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    collectionViewLayout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
+    collectionViewLayout.itemSize = CGSizeMake(self.view.frame.size.width / 3 - 10 , self.view.frame.size.width / 3 - 10 );
+    collectionViewLayout.minimumLineSpacing = 5;
+    collectionViewLayout.minimumInteritemSpacing = 5;
+    self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:collectionViewLayout];
     self.collectionView.dataSource = self;
-    //[self.collectionView registerClass:CollectionViewCell.class forCellReuseIdentifier:@"CellId"];
+    self.collectionView.delegate = self;
+    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+    self.collectionView.backgroundColor = [UIColor rsschoolWhiteColor];
     [self.view addSubview:self.collectionView];
-    [NSLayoutConstraint activateConstraints:@[
-        [self.collectionView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
-        [self.collectionView.topAnchor constraintEqualToAnchor:self.view.topAnchor],
-        [self.collectionView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
-        [self.collectionView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor]
-    ]];
 }
-/*
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView ;
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;
 
 
 
-- (nullable UICollectionViewCell *)cellForItemAtIndexPath:(NSIndexPath *)indexPath;
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 
-- (__kindof UICollectionViewCell *)dequeueReusableCellWithReuseIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath;*/
+    self.parentViewController.navigationItem.title = @"Gallery";
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 40;
+}
+
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor greenColor];
+    return cell;
+}
 
 @end

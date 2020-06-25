@@ -13,7 +13,7 @@
 -(instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
     if (self) {
-        [self setUpImageView];
+        //[self setUpImageView];
     }
     return self;
 }
