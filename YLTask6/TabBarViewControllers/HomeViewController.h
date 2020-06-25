@@ -13,12 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HomeViewController : UIViewController
 @property (strong, nonatomic) UIButton *gitButton;
 @property (strong, nonatomic) UIButton *resetButton;
-@property (strong, nonatomic) UILabel *apple;
+@property (strong, nonatomic) UIImageView *appleView;
 @property (strong, nonatomic) UIStackView *stackView;
 @property (strong, nonatomic) UIView *triangleView;
 @property (strong, nonatomic) UIView *squareView;
 @property (strong, nonatomic) UIView *circleView;
-
+@property (strong, nonatomic) UIImage *appleImage;
 @end
 
 NS_ASSUME_NONNULL_END

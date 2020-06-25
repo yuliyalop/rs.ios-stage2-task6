@@ -13,20 +13,9 @@
 -(instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
     if (self) {
-        //[self setUpImageView];
+
     }
     return self;
 }
 
--(void) setUpImageView {
-    self.imageView = [UIImageView new];
-    self.imageView.translatesAutoresizingMaskIntoConstraints = false;
-    [self addSubview:self.imageView];
-    [NSLayoutConstraint activateConstraints:@[
-        [self.topAnchor constraintEqualToAnchor:self.topAnchor],
-        [self.bottomAnchor constraintEqualToAnchor:self.bottomAnchor],
-        [self.trailingAnchor constraintEqualToAnchor:self.trailingAnchor],
-        [self.leadingAnchor constraintEqualToAnchor:self.leadingAnchor],
-    ]];
-}
 @end

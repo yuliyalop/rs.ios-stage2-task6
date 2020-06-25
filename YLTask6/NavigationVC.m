@@ -70,8 +70,6 @@
   animation.duration = 1.0;
    animation.repeatCount=HUGE_VALF;
   [self.circleView.layer addAnimation:animation forKey:@"scale"];
-  //[animation.layer setCornerRadius:0.0];
-  
 }
    
 
@@ -95,7 +93,7 @@
     #pragma mark Square
     self.squareView = [[UIView alloc]init];
        self.squareView.backgroundColor = [UIColor rsschoolBlueColor];
-    #pragma mark Triangle
+#pragma mark Triangle
        UIBezierPath* trianglePath = [UIBezierPath bezierPath];
        [trianglePath moveToPoint:CGPointMake(35, 0)];
        [trianglePath addLineToPoint:CGPointMake(0, 70)];
@@ -110,17 +108,14 @@
      
 -(void) setUpStack {
     self.containerStackView = [[UIStackView alloc]init];
-
     [self.containerStackView addArrangedSubview:self.circleView];
     [self.containerStackView addArrangedSubview:self.squareView];
     [self.containerStackView addArrangedSubview:self.triangleView];
-    
     self.triangleView.translatesAutoresizingMaskIntoConstraints = NO;
         [NSLayoutConstraint activateConstraints:@[
             [self.triangleView.heightAnchor constraintEqualToConstant:70],
             [self.triangleView.widthAnchor constraintEqualToConstant:70]
         ]];
-          
     self.circleView.translatesAutoresizingMaskIntoConstraints = NO;
            [NSLayoutConstraint activateConstraints:@[
                [self.circleView.heightAnchor constraintEqualToConstant:70],
@@ -131,12 +126,10 @@
              [self.squareView.heightAnchor constraintEqualToConstant:70],
             [self.squareView.widthAnchor constraintEqualToConstant:70]
            ]];
-    
     self.containerStackView.axis = UILayoutConstraintAxisHorizontal;
     self.containerStackView.distribution = UIStackViewDistributionEqualCentering;
     self.containerStackView.alignment = UIStackViewAlignmentCenter;
     [self.view addSubview:self.containerStackView];
-  
    self.containerStackView.translatesAutoresizingMaskIntoConstraints = NO;
     [NSLayoutConstraint activateConstraints:@[
         [self.containerStackView.topAnchor constraintEqualToAnchor:self.view.centerYAnchor constant:-70],
@@ -160,7 +153,6 @@
     self.startButton.layer.cornerRadius = 55.0/2.0f;
     [self.startButton addTarget:self action:@selector(buttonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.startButton];
-    
    self.startButton.translatesAutoresizingMaskIntoConstraints = NO;
          [NSLayoutConstraint activateConstraints:@[
              [self.startButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
@@ -174,28 +166,42 @@
 }
 
 -(void) buttonPressed {
-
     UIViewController *tab1 = [InfoViewController new];
     tab1.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"info_unselected"] selectedImage:[[UIImage imageNamed:@"info_selected"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
-    
     GalleryViewController *tab2 = [GalleryViewController new];
-    
     tab2.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"gallery_unselected"] selectedImage:[[UIImage imageNamed:@"gallery_selected"]imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
-
        HomeViewController *tab3 = [HomeViewController new];
     tab3.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"home_selected"] selectedImage:[[UIImage imageNamed:@"home_selected"]imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
-    
-
        TabViewController *tabBarController = [TabViewController new];
-      tabBarController.viewControllers = @[tab1, tab2, tab3];
-    
-     tabBarController.selectedIndex = 1;
-    
+    tabBarController.viewControllers = @[tab1, tab2, tab3];
+    tabBarController.selectedIndex = 1;
    [self.navigationController pushViewController:tabBarController animated:YES];
-   
-    
 }
 
 
+/*-(void)willTransitionToTraitCollection:(UITraitCollection *)newCollection withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    
+    if (newCollection.verticalSizeClass == UIUserInterfaceSizeClassRegular)
+        [self updateViewConstraints];
+    }*/
 
+     /*
+-(void)updateViewConstraints {
+ 
+           [NSLayoutConstraint activateConstraints:@[
+                            [self.startButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
+                            [self.startButton.topAnchor constraintEqualToAnchor:self.view.centerYAnchor constant:100],
+                            [self.startButton.heightAnchor constraintEqualToConstant:55],
+                            [self.startButton.widthAnchor constraintEqualToConstant:300],
+                            
+       
+                    [self.containerStackView.topAnchor constraintEqualToAnchor:self.view.centerYAnchor constant:-50],
+                    [self.containerStackView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
+                    [self.containerStackView.widthAnchor constraintEqualToConstant:300]
+           ,
+           
+                                   [self.label.bottomAnchor constraintEqualToAnchor:self.view.centerYAnchor constant:-100],
+                                   [self.label.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor]
+                               ]];
+       }*/
 @end

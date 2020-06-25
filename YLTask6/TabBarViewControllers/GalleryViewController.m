@@ -20,18 +20,16 @@
     UICollectionViewFlowLayout *collectionViewLayout = [[UICollectionViewFlowLayout alloc] init];
     collectionViewLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     collectionViewLayout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
-    collectionViewLayout.itemSize = CGSizeMake(self.view.frame.size.width / 3 - 10 , self.view.frame.size.width / 3 - 10 );
+    collectionViewLayout.itemSize = CGSizeMake(self.view.bounds.size.width / 3 - 10 , self.view.bounds.size.width / 3 - 10 );
     collectionViewLayout.minimumLineSpacing = 5;
     collectionViewLayout.minimumInteritemSpacing = 5;
-    self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:collectionViewLayout];
+    self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:collectionViewLayout];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
     self.collectionView.backgroundColor = [UIColor rsschoolWhiteColor];
     [self.view addSubview:self.collectionView];
 }
-
-
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -45,7 +43,7 @@
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor greenColor];
+    cell.backgroundColor = [UIColor rsschoolBlackColor];
     return cell;
 }
 

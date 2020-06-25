@@ -21,12 +21,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.parentViewController.navigationItem.title = @"Info";
-    
     [self setUpTableView];
     [self fillInitialDataSource];
 }
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 
+       self.parentViewController.navigationItem.title = @"Info";
+}
 -(void)setUpTableView {
     self.tableView = [[UITableView alloc] init];
     self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -57,21 +59,16 @@
 
     - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
-      
-
     }
-
-
 
     - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         return 70.0;
     }
 
-
 - (void)fillInitialDataSource {
     
     self.arrayData = [NSMutableArray arrayWithArray:@[
-        [[Data alloc]initWithImage: [UIImage imageNamed: @"appple"] title: @"apple" subtitle: @"subtitle"]]
+        [[Data alloc]initWithImage: [UIImage imageNamed: @"appple"] title: @"Content_type" subtitle: @"Content_size"]]
     ];
 }
 @end

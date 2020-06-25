@@ -12,14 +12,18 @@
 #import "SceneDelegate.h"
 @implementation HomeViewController
 -(void)viewDidLoad {
+    [super viewDidLoad];
     [self figures];
     [self setUpStack];
     [self gitButtonSettings];
-   [self resetButtonSettings];
-    self.parentViewController.navigationItem.title = @"RSSchool Task 6";
+    [self resetButtonSettings];
+    [self appleSetUp];
     
 }
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.parentViewController.navigationItem.title = @"RSSchool Task 6";
+}
 -(void) figures {
     #pragma mark Circle
     self.circleView = [UIView new];
@@ -45,7 +49,6 @@
 
 -(void) gitButtonSettings {
     self.gitButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-
     self.gitButton.backgroundColor = [UIColor rsschoolYellowColor];
     [self.gitButton setTitle:@"Open Git CV" forState:UIControlStateNormal];
     [self.gitButton setTitleColor:[UIColor rsschoolBlackColor] forState:UIControlStateNormal];
@@ -53,7 +56,6 @@
     self.gitButton.layer.cornerRadius = 55.0/2.0f;
     [self.gitButton addTarget:self action:@selector(gitButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.gitButton];
-    
    self.gitButton.translatesAutoresizingMaskIntoConstraints = NO;
          [NSLayoutConstraint activateConstraints:@[
              [self.gitButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
@@ -61,7 +63,6 @@
              [self.gitButton.widthAnchor constraintEqualToConstant:300],
              [self.gitButton.heightAnchor constraintEqualToConstant:55]
          ]];
-
 }
 -(void) resetButtonSettings {
     self.resetButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -88,6 +89,7 @@
 
 -(void) resetButtonPressed {
     [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
 -(void) setUpStack {
@@ -116,18 +118,22 @@
     [self.view addSubview:self.stackView];
    self.stackView.translatesAutoresizingMaskIntoConstraints = NO;
     [NSLayoutConstraint activateConstraints:@[
-        [self.stackView.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor],
+        [self.stackView.topAnchor constraintEqualToAnchor:self.view.centerYAnchor constant:-70],
         [self.stackView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
         [self.stackView.widthAnchor constraintEqualToConstant:300]
-        /*[self.containerStackView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:50],
-        [self.containerStackView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-50],
-       */
     ]];
     
 }
 
 -(void)appleSetUp {
-    self.apple = [[UILabel alloc]initWithFrame:CGRectMake(50, 50, 100, 100)];
-    
+    self.appleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"apple"]];
+    [self.view addSubview:self.appleView];
+    self.appleView.translatesAutoresizingMaskIntoConstraints = NO;
+      [NSLayoutConstraint activateConstraints:@[
+          [self.appleView.trailingAnchor constraintEqualToAnchor:self.view.centerXAnchor constant:-70],
+          [self.appleView.bottomAnchor constraintEqualToAnchor:self.stackView.topAnchor constant: -70],
+      
+      ]];
+      
 }
 @end
