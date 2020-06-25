@@ -11,9 +11,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Data : NSObject
-@property (strong, nonatomic) UIImage *image;
--(instancetype)initWithImageNumber;
-
+@property (strong, nonatomic) UIImageView *image;
+@property (strong, nonatomic) UIImage *icon;
+@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *subtitle;
+-(instancetype)initWithImage: (UIImageView *)image title: (NSString *)title subtitle: (NSString *)subtitle;// icon: (UIImage *)icon;
 @end
 
 NS_ASSUME_NONNULL_END

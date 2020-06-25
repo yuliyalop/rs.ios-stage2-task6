@@ -8,6 +8,7 @@
 
 
 #import "InfoTableViewCell.h"
+#import "Data.h"
 
 @interface InfoTableViewCell ()
 
@@ -23,6 +24,11 @@
     return self;
 }
 
+- (void)configureWithCell:(Data *)data {
+    self.imageView.image = data.image;
+    self.textLabel.text = data.title;
+    self.detailTextLabel.text = data.subtitle;
+}
 
 
 

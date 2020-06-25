@@ -10,16 +10,17 @@
 #import "InfoTableViewCell.h"
 #import "Data.h"
 #import "UIColor+RSColors.h"
+#import <Photos/Photos.h>
 @interface InfoViewController ()
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *arrayData;
+@property (nonatomic, strong) NSMutableArray <Data*> *arrayData;
 @end
 
 @implementation InfoViewController
 
 
 - (void)viewDidLoad {
-   
+    
       [UINavigationBar appearance].barTintColor = [UIColor rsschoolYellowColor];
     [self setUpTableView];
     [self fillInitialDataSource];
@@ -47,7 +48,7 @@
 
     - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
         InfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellId" forIndexPath:indexPath];
-        //[cell метод ячейки:self.arrayData[indexPath.row]];
+        [cell configureWithCell:self.arrayData[indexPath.row]];
         return cell;
     }
 
@@ -62,12 +63,14 @@
 
 
     - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-        return 20.0;
+        return 70.0;
     }
 
 
 - (void)fillInitialDataSource {
-
-    ///здесь мы заполняем ячейки
+    
+    self.arrayData = [NSMutableArray arrayWithArray:@[
+        [[Data alloc]initWithImage: [UIImage imageNamed: @"appple"] title: @"apple" subtitle: @"subtitle"]]
+    ];
 }
 @end

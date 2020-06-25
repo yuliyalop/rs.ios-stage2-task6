@@ -30,13 +30,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self.navigationController setNavigationBarHidden:NO];
     [self figures];
     [self makeLabel];
     [self buttonSettings];
     [self setUpStack];
-  
+    
    
     
 }
@@ -183,7 +182,7 @@
     tab2.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"gallery_unselected"] selectedImage:[[UIImage imageNamed:@"gallery_selected"]imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
 
        HomeViewController *tab3 = [HomeViewController new];
-       tab3.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"home_selected"] selectedImage:[[UIImage imageNamed:@"home_selected"]imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
+    tab3.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"home_selected"] selectedImage:[[UIImage imageNamed:@"home_selected"]imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
     
 
        TabViewController *tabBarController = [TabViewController new];

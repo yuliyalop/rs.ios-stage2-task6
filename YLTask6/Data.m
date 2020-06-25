@@ -9,10 +9,14 @@
 #import "Data.h"
 
 @implementation Data
--(instancetype)initWithImageNumber: (NSString *)imageNumber; {
+-(instancetype)initWithImage: (UIImageView *)image title: (NSString *)title subtitle: (NSString *)subtitle; //icon: (UIImage *)icon; {
+{
     self = [super init];
     if (self) {
-        
+        _image = image;
+        _title = title;
+        _subtitle = subtitle;
+        //_icon = icon;
     }
     return self;
 }
