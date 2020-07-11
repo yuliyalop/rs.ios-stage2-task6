@@ -19,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIView *squareView;
 @property (strong, nonatomic) UIView *circleView;
 @property (strong, nonatomic) UIImage *appleImage;
+@property (strong, nonatomic) UILabel *nameLabel;
+@property (strong, nonatomic) UILabel *modelLabel;
+@property (strong, nonatomic) UILabel *systemLabel;
 @end
 
 NS_ASSUME_NONNULL_END

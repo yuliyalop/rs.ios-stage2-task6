@@ -7,15 +7,29 @@
 //
 
 #import "CollectionViewCell.h"
-
 @implementation CollectionViewCell
 
--(instancetype)initWithCoder:(NSCoder *)coder {
-    self = [super initWithCoder:coder];
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
     if (self) {
-
+        [self setupImageView];
     }
     return self;
 }
 
+
+-(void) setupImageView{
+    self.imageView=[UIImageView new];
+    self.imageView.translatesAutoresizingMaskIntoConstraints=NO;
+    self.imageView.userInteractionEnabled = NO;
+    [self addSubview:self.imageView];
+    
+    [self.imageView.topAnchor constraintEqualToAnchor:self.topAnchor].active=YES;
+    [self.imageView.leadingAnchor constraintEqualToAnchor:self.leadingAnchor].active=YES;
+    [self.imageView.trailingAnchor constraintEqualToAnchor:self.trailingAnchor].active=YES;
+    [self.imageView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor].active=YES;
+    
+    
+}
 @end

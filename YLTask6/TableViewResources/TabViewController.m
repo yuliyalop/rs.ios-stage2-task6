@@ -17,7 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor rsschoolWhiteColor];
+  
 
+}
+- (void)viewDidLayoutSubviews {
+      [self setTabBarHeight];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -32,5 +36,8 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES]; 
 }
 
+- (void)setTabBarHeight {
+   
+}
 
 @end

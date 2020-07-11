@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+@import Photos;
 @interface GalleryViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
-@property (strong, nonatomic) UICollectionView *collectionView;
+@property (strong, nonatomic) UIImageView *fullImageView;
 
 @end
 

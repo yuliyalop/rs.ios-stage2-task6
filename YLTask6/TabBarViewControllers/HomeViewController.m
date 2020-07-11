@@ -131,9 +131,37 @@
     self.appleView.translatesAutoresizingMaskIntoConstraints = NO;
       [NSLayoutConstraint activateConstraints:@[
           [self.appleView.trailingAnchor constraintEqualToAnchor:self.view.centerXAnchor constant:-70],
-          [self.appleView.bottomAnchor constraintEqualToAnchor:self.stackView.topAnchor constant: -70],
-      
+          [self.appleView.bottomAnchor constraintEqualToAnchor:self.stackView.topAnchor constant: -100],
       ]];
+    self.nameLabel = [UILabel new];
+    self.nameLabel.text = UIDevice.currentDevice.name;
+    self.nameLabel.font = [UIFont systemFontOfSize:20 weight:UIFontWeightMedium];
+    [self.view addSubview:self.nameLabel];
+    self.nameLabel.translatesAutoresizingMaskIntoConstraints = NO;
+       [NSLayoutConstraint activateConstraints:@[
+           [self.nameLabel.topAnchor constraintEqualToAnchor:self.view.topAnchor constant: 200],
+           [self.nameLabel.leftAnchor constraintEqualToAnchor:self.view.centerXAnchor constant: -30]
+       ]];
+    
+    self.modelLabel = [UILabel new];
+    self.modelLabel.text = UIDevice.currentDevice.model;
+    self.modelLabel.font = [UIFont systemFontOfSize:20 weight:UIFontWeightMedium];
+    [self.view addSubview:self.modelLabel];
+    self.modelLabel.translatesAutoresizingMaskIntoConstraints = NO;
+       [NSLayoutConstraint activateConstraints:@[
+           [self.modelLabel.topAnchor constraintEqualToAnchor:self.view.topAnchor constant: 230],
+           [self.modelLabel.leftAnchor constraintEqualToAnchor:self.view.centerXAnchor constant: -30]
+       ]];
+    
+    self.systemLabel = [UILabel new];
+    self.systemLabel.text = UIDevice.currentDevice.systemName;
+    self.systemLabel.font = [UIFont systemFontOfSize:20 weight:UIFontWeightMedium];
+    [self.view addSubview:self.systemLabel];
+    self.systemLabel.translatesAutoresizingMaskIntoConstraints = NO;
+       [NSLayoutConstraint activateConstraints:@[
+           [self.systemLabel.topAnchor constraintEqualToAnchor:self.view.topAnchor constant: 260],
+           [self.systemLabel.leftAnchor constraintEqualToAnchor:self.view.centerXAnchor constant: -30]
+       ]];
       
 }
 @end

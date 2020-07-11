@@ -9,10 +9,25 @@
 #import "GalleryViewController.h"
 #import "UIColor+RSColors.h"
 #import "CollectionViewCell.h"
+#import <Photos/Photos.h>
+
+@interface GalleryViewController ()
+@property (strong, nonatomic) UICollectionView *collectionView;
+@property (strong, nonatomic) PHFetchResult *assetsFetchResult;
+@property(nonatomic , strong) PHCachingImageManager *imageManager;
+@end
+
 @implementation GalleryViewController
 -(void)viewDidLoad {
     [super viewDidLoad];
     [self setUpCollection];
+    //self.fetchResult = [PHAsset fetchAssetsWithMediaType:PHAssetMediaTypeImage options:0];
+    PHFetchOptions *options = [[PHFetchOptions alloc] init];
+    options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO]];
+    self.assetsFetchResult = [PHAsset fetchAssetsWithOptions:options];
+
+    self.imageManager = [[PHCachingImageManager alloc] init];
+       
 }
 
 -(void)setUpCollection {
@@ -26,9 +41,16 @@
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:collectionViewLayout];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+    [self.collectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     self.collectionView.backgroundColor = [UIColor rsschoolWhiteColor];
     [self.view addSubview:self.collectionView];
+ self.collectionView.translatesAutoresizingMaskIntoConstraints = NO;
+       [NSLayoutConstraint activateConstraints:@[
+           [self.collectionView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
+           [self.collectionView.topAnchor constraintEqualToAnchor:self.view.topAnchor],
+           [self.collectionView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
+           [self.collectionView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor]
+       ]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -38,12 +60,18 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 40;
+    return [self.assetsFetchResult count];
 }
 
-- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor rsschoolBlackColor];
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    CollectionViewCell *cell  = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    PHAsset *asset = self.assetsFetchResult[indexPath.item];
+    [self.imageManager requestImageForAsset:asset targetSize:cell.imageView.frame.size contentMode:PHImageContentModeAspectFill options:nil resultHandler:^(UIImage *result, NSDictionary *info)
+             {
+        cell.imageView.image = result;
+             }];
+    
     return cell;
 }
 

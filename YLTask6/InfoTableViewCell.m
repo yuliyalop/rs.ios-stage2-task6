@@ -2,34 +2,23 @@
 //  InfoTableViewCell.m
 //  YLTask6
 //
-//  Created by Юлия Лопатина on 6/22/20.
+//  Created by Юлия Лопатина on 7/11/20.
 //  Copyright © 2020 Юлия Лопатина. All rights reserved.
 //
 
-
 #import "InfoTableViewCell.h"
-#import "Data.h"
-
-@interface InfoTableViewCell ()
-
-
-@end
 
 @implementation InfoTableViewCell
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    self = [super initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
-    if (self) {
-        //[self setupViews];
-    }
-    return self;
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
 }
 
-- (void)configureWithCell:(Data *)data {
-    self.imageView.image = data.image;
-    self.textLabel.text = data.title;
-    self.detailTextLabel.text = data.subtitle;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
 }
-
-
 
 @end
