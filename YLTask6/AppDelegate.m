@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "NavigationVC.h"
+#import "UIColor+RSColors.h"
 @interface AppDelegate ()
 
 @end
@@ -16,26 +17,29 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.mainWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+   UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:[NavigationVC new]];
+    [self.mainWindow makeKeyAndVisible];
+    self.mainWindow.rootViewController= navigationController;
+        [navigationController setNavigationBarHidden:YES animated:NO];
+    [UINavigationBar appearance].barTintColor = [UIColor rsschoolYellowColor];
     return YES;
 }
 
+//- (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
+//    UIWindow *window = [[UIWindow alloc]initWithWindowScene:(UIWindowScene *)scene];
+//    window.rootViewController = [self rootViewController];
+//    self.window = window;
+//    [self.window makeKeyAndVisible];
+//}
+//
+//- (UIViewController *) rootViewController {
+//    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[NavigationVC new]];
+//    [navigationController setNavigationBarHidden:YES animated:NO];
+//    [UINavigationBar appearance].barTintColor = [UIColor rsschoolYellowColor];
+//    return navigationController;
+//}
 
-#pragma mark - UISceneSession lifecycle
-
-
-- (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options {
-    // Called when a new scene session is being created.
-    // Use this method to select a configuration to create the new scene with.
-    return [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
-}
-
-
-- (void)application:(UIApplication *)application didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions {
-    // Called when the user discards a scene session.
-    // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-    // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-}
 
 
 @end

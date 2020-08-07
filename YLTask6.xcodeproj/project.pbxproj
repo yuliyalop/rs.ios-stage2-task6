@@ -11,7 +11,6 @@
 		9B66FE6424BA0DE600D985F3 /* InfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B66FE6324BA0DE600D985F3 /* InfoTableViewCell.m */; };
 		9BB645A224A3D16D002FA5EC /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB645A124A3D16C002FA5EC /* CollectionViewCell.m */; };
 		9BB94ED3249FE183001A55E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB94ED2249FE183001A55E8 /* AppDelegate.m */; };
-		9BB94ED6249FE183001A55E8 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB94ED5249FE183001A55E8 /* SceneDelegate.m */; };
 		9BB94EDE249FE187001A55E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BB94EDD249FE187001A55E8 /* Assets.xcassets */; };
 		9BB94EE1249FE187001A55E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BB94EDF249FE187001A55E8 /* LaunchScreen.storyboard */; };
 		9BB94EE4249FE187001A55E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB94EE3249FE187001A55E8 /* main.m */; };
@@ -32,8 +31,6 @@
 		9BB94ECE249FE183001A55E8 /* YLTask6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YLTask6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB94ED1249FE183001A55E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9BB94ED2249FE183001A55E8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9BB94ED4249FE183001A55E8 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		9BB94ED5249FE183001A55E8 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		9BB94EDD249FE187001A55E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BB94EE0249FE187001A55E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9BB94EE2249FE187001A55E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,8 +83,6 @@
 				9B66FE6324BA0DE600D985F3 /* InfoTableViewCell.m */,
 				9BB94ED1249FE183001A55E8 /* AppDelegate.h */,
 				9BB94ED2249FE183001A55E8 /* AppDelegate.m */,
-				9BB94ED4249FE183001A55E8 /* SceneDelegate.h */,
-				9BB94ED5249FE183001A55E8 /* SceneDelegate.m */,
 				9BB94EED249FF035001A55E8 /* UIColor+RSColors.h */,
 				9BB94EEE249FF035001A55E8 /* UIColor+RSColors.m */,
 				9BB94EDD249FE187001A55E8 /* Assets.xcassets */,
@@ -189,7 +184,6 @@
 				9BB645A224A3D16D002FA5EC /* CollectionViewCell.m in Sources */,
 				9BB94EEC249FED69001A55E8 /* NavigationVC.m in Sources */,
 				9BB94EFB24A09837001A55E8 /* HomeViewController.m in Sources */,
-				9BB94ED6249FE183001A55E8 /* SceneDelegate.m in Sources */,
 				9BB94EF524A097AC001A55E8 /* InfoViewController.m in Sources */,
 				9BB94EEF249FF035001A55E8 /* UIColor+RSColors.m in Sources */,
 			);
@@ -259,7 +253,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -311,7 +305,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

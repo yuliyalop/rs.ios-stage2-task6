@@ -9,7 +9,6 @@
 #import "HomeViewController.h"
 #import "UIColor+RSColors.h"
 #import "NavigationVC.h"
-#import "SceneDelegate.h"
 @implementation HomeViewController
 -(void)viewDidLoad {
     [super viewDidLoad];
